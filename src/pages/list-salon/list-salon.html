@@ -1,0 +1,35 @@
+<ion-header no-border no-shadow>
+  <ion-navbar>
+    <ion-title>Estabelecimentos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <form class="form" [formGroup]="formHome">
+
+    <ion-row>
+      <ion-col col-12>
+
+        <ion-searchbar (ionInput)="getItems($event)" class="my-page-name-searchbar" placeholder="Buscar Salões"
+          id="search" formControlName="search">
+        </ion-searchbar>
+
+        <ion-row>
+          <ion-col>
+            <div class="linha"></div>
+          </ion-col>
+        </ion-row>
+
+        <ion-list *ngIf="validationOfFormControl(formHome?.get('search')) || this.navParams.get('category')">
+          <ion-item class="cor-letra" *ngFor="let establishment of establishments" (tap)="selectItem(establishment)">
+            {{ establishment.name }}
+          </ion-item>
+        </ion-list>
+
+      </ion-col>
+    </ion-row>
+
+  </form>
+
+</ion-content>

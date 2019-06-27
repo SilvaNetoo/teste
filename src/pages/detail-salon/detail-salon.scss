@@ -1,0 +1,14 @@
+page-detail-salon {
+  .segment-md-secondary .segment-button {
+    color: #905c4f;
+    font-weight: bold;
+  }
+
+  .segment-md-secondary .segment-button.activated,
+  .segment-md-secondary .segment-button.segment-activated {
+    border-color: #905c4f;
+    color: #905c4f;
+    opacity: 1;
+    font-weight: bold;
+  }
+}

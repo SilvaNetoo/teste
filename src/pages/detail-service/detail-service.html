@@ -1,0 +1,42 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detalhes do serviço</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div *ngIf="service">
+
+    <ion-card>
+      <ion-card-header text-wrap>
+        <img src="../../assets/imgs/salao1.jfif" alt="">
+        <ion-card-title>{{service.name}}</ion-card-title>
+      </ion-card-header>
+
+      <div class="linha"></div>
+
+      <ion-card-content>
+        <ion-row>
+          <ion-col class="normal" col-12>
+            {{service.detail}}
+          </ion-col>
+
+          <ion-col class="value" text-right col-12>
+            {{service.value | value}}
+          </ion-col>
+        </ion-row>
+
+        <div class="linha"></div>
+
+        <ion-row>
+          <ion-col col-12>
+            <button (tap)="addingToBag()" ion-button full>Adicionar</button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>

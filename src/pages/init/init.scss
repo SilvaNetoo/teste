@@ -1,0 +1,25 @@
+page-init {
+  .img-size {
+    height: 200px;
+    width: 50%;
+  }
+
+  .swiper-slide img {
+    width: auto;
+    min-width: 100%;
+    height: auto;
+    max-height: 13rem;
+  }
+
+  .small-img {
+    width: 90px !important;
+  }
+
+  .slide-zoom {
+    margin-right: 10px;
+  }
+
+  .searchbar-md {
+    padding: 0px;
+  }
+}

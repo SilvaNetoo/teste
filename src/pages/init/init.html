@@ -1,0 +1,71 @@
+<ion-header no-border no-shadow>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-row>
+    <ion-col col-12>
+
+      <ion-searchbar (ionFocus)="goToListSalon()" placeholder="Buscar"></ion-searchbar>
+
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <div class="linha"></div>
+    </ion-col>
+  </ion-row>
+
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-title>Categorias</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+
+      <ion-row>
+        <ion-col col-12>
+          <ion-slides>
+            <ion-slide *ngFor="let category of categories" (click)="consultCategory(category.category)">
+              <img src="{{category.img}}" alt="">
+              <p class="cor-letra">{{category.category}}</p>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-row>
+
+    </ion-card-content>
+  </ion-card>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Estabelecimentos</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-list *ngFor="let establishment of establishments;let i = index">
+        <ion-card (click)="goToDetailEstablishment(establishment.id)">
+          <ion-row>
+            <ion-col col-3 class="border-r">
+
+            </ion-col>
+            <ion-col col-9>
+              <ion-item>{{establishment.name}}</ion-item>
+              <ion-item>{{establishment.category}}</ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-card>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

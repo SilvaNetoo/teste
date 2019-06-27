@@ -1,0 +1,83 @@
+<ion-header no-border no-shadow>
+  <ion-navbar>
+    <ion-title class="bold" *ngIf="establishment">{{establishment.name}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <div [formGroup]="formSegment">
+    <ion-segment formControlName="segment" id="segment" name="segment" color="secondary">
+      <ion-segment-button value="product" (ionSelect)="selectedSegment()">
+        <div class="bold">
+          Produtos
+        </div>
+      </ion-segment-button>
+      <ion-segment-button value="service" (ionSelect)="selectedSegment()">
+        <div class="bold">
+          Serviços
+        </div>
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+
+  <div *ngIf="establishment">
+
+    <ion-card *ngIf="!selectedSegment()">
+      <ion-card-header>
+        <ion-card-title>Produtos</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list *ngFor="let product of establishment.products;let i = index">
+          <div class="linha"></div>
+          <ion-card (click)="goToPage('DetailProductPage', product.id, establishment.id)">
+            <ion-row>
+              <ion-col col-3 class="border-r">
+                <!-- aqui fica a imagem do produto -->
+              </ion-col>
+              <ion-col col-9>
+                <ion-item>
+                  {{product.name | maxLength}}
+                </ion-item>
+                <ion-item class="value" text-right>
+                  {{product.value | value}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card *ngIf="selectedSegment()">
+      <ion-card-header>
+        <ion-card-title>Serviços</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-list *ngFor="let service of establishment.services;let i = index">
+          <div class="linha"></div>
+          <ion-card (click)="goToPage('DetailServicePage', service.id, establishment.id)">
+            <ion-row>
+              <ion-col col-3 class="border-r">
+                <!-- aqui fica a imagem do produto -->
+              </ion-col>
+              <ion-col col-9>
+                <ion-item>
+                  {{service.name | maxLength}}
+                </ion-item>
+                <ion-item class="value" text-right>
+                  {{service.value | value}}
+                </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-card>
+        </ion-list>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>

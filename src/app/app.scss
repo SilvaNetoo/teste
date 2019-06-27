@@ -1,16 +1,186 @@
-// http://ionicframework.com/docs/theming/
+.toolbar-title-md {
+  color: #c68d82;
+}
 
+.bar-button-default-md,
+.bar-button-clear-md-default,
+.bar-button-md-default {
+  color: #c68d82;
+}
 
-// App Global Sass
-// --------------------------------------------------
-// Put style rules here that you want to apply globally. These
-// styles are for the entire app and not just one component.
-// Additionally, this file can be also used as an entry point
-// to import other Sass files to be included in the output CSS.
-//
-// Shared Sass variables, which can be used to adjust Ionic's
-// default Sass variables, belong in "theme/variables.scss".
-//
-// To declare rules for a specific mode, create a child rule
-// for the .md, .ios, or .wp mode classes. The mode class is
-// automatically applied to the <body> element in the app.
+.linha {
+  width: 100%;
+  height: 1px;
+  background: -moz-linear-gradient(-45deg, #c68d82 0%, #905c4f 100%);
+  background: -webkit-linear-gradient(-45deg, #c68d82 0%, #905c4f 100%);
+  background: linear-gradient(135deg, #c68d82 0%, #905c4f 100%);
+}
+
+.cor-letra {
+  color: #905c4f;
+}
+
+.card-title-md {
+  color: #905c4f;
+}
+
+.ft-10-pt {
+  font-size: 10pt;
+  font-weight: bold;
+}
+
+.content-md {
+  background-color: #f4f4f473 !important;
+}
+
+div {
+  background-color: inherit;
+  border: 0px;
+}
+
+ion-card-header {
+  border-radius: 10px 10px 0px 0px;
+}
+
+ion-card-content {
+  border-radius: 0px 0px 10px 10px;
+}
+
+.splash {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #905c4f;
+}
+
+.sk-cube-grid {
+  width: 20vw;
+  height: 20vw;
+  margin: 100px auto;
+}
+
+.sk-cube-grid .sk-cube {
+  width: 33%;
+  height: 33%;
+  background-color: #ffffff;
+  float: left;
+  -webkit-animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+  animation: sk-cubeGridScaleDelay 1.3s infinite ease-in-out;
+}
+.sk-cube-grid .sk-cube1 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube2 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube3 {
+  -webkit-animation-delay: 0.4s;
+  animation-delay: 0.4s;
+}
+.sk-cube-grid .sk-cube4 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube5 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+.sk-cube-grid .sk-cube6 {
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
+}
+.sk-cube-grid .sk-cube7 {
+  -webkit-animation-delay: 0s;
+  animation-delay: 0s;
+}
+.sk-cube-grid .sk-cube8 {
+  -webkit-animation-delay: 0.1s;
+  animation-delay: 0.1s;
+}
+.sk-cube-grid .sk-cube9 {
+  -webkit-animation-delay: 0.2s;
+  animation-delay: 0.2s;
+}
+
+@-webkit-keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+@keyframes sk-cubeGridScaleDelay {
+  0%,
+  70%,
+  100% {
+    -webkit-transform: scale3D(1, 1, 1);
+    transform: scale3D(1, 1, 1);
+  }
+  35% {
+    -webkit-transform: scale3D(0, 0, 1);
+    transform: scale3D(0, 0, 1);
+  }
+}
+
+.searchbar-search-icon {
+  background-image: url("../assets/icon/search.svg") !important;
+}
+
+.searchbar-md .searchbar-clear-icon {
+  background-image: url("../assets/icon/clear-button.svg") !important;
+  background-size: 16px !important;
+}
+
+.border-r {
+  border-right: outset;
+  border-right-color: #ffb8aa;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.normal {
+  font-weight: normal;
+  color: grey;
+}
+
+.value {
+  font-size: 12pt;
+  font-weight: bold;
+  color: red;
+}
+
+.card-title-md {
+  color: #905c4f;
+  font-size: 15pt;
+  font-weight: bold;
+}
+
+img {
+  object-fit: cover;
+  max-width: 100%;
+  border: 0;
+  border-radius: 10px;
+  margin-right: 20px;
+}
+
+.button-full-md {
+  background-color: #905c4f;
+}
+
+.button-full-md:active {
+  background-color: #c68d82;
+}

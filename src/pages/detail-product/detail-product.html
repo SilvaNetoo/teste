@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Detalhes do produto</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <div *ngIf="product">
+
+    <ion-card>
+      <ion-card-header text-wrap>
+        <img src="../../assets/imgs/salao1.jfif" alt="">
+        <ion-card-title>{{product.name}}</ion-card-title>
+      </ion-card-header>
+
+      <div class="linha"></div>
+
+      <ion-card-content>
+        <ion-row>
+          <ion-col class="normal" col-12>
+            {{product.detail}}
+          </ion-col>
+
+          <ion-col class="normal" col-12>
+            Quantidade disponível: {{product.amount}}
+          </ion-col>
+
+          <ion-col class="value" text-right col-12>
+            {{product.value | value}}
+          </ion-col>
+        </ion-row>
+
+        <div class="linha"></div>
+
+        <ion-row>
+          <ion-col (click)="remove()" col-1>
+            <ion-icon padding-top [attr.disabled]="greaterThanOne()" name="md-remove"></ion-icon>
+          </ion-col>
+
+          <ion-col col-1>
+            <div padding-top>
+              {{formAmount?.controls?.amount?.value}}
+            </div>
+          </ion-col>
+
+          <ion-col (click)="add()" col-1>
+            <ion-icon padding-top name="md-add"></ion-icon>
+          </ion-col>
+
+          <ion-col col-1></ion-col>
+
+          <ion-col *ngIf="product.value && greaterThanOne()" col-8>
+            <button (tap)="addingToBag()" ion-button full>Adicionar
+              {{multiplied(product.value, formAmount?.controls?.amount?.value) | value}}</button>
+          </ion-col>
+        </ion-row>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+
+</ion-content>
